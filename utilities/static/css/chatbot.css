@@ -171,6 +171,12 @@ body {
     margin-top: 5px; /* Add this line to reduce the top margin */
 }
 
+.user-message p, .bot-message p {
+    margin: 0; /* Remove the default margin from the <p> tags */
+    padding: 0; /* Remove any padding from the <p> tags */
+    line-height: 1.2; /* Ensure line-height is consistent */
+}
+
 .bot-message a {
     color: #B88416;
 }
