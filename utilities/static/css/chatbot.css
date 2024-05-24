@@ -1,0 +1,336 @@
+body {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    margin-top: 10%;
+    background-color: #f1f1f1;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#chat-container {
+    width: 400px;;
+    margin: auto; 
+    border-radius: 3px;
+    border: 1px solid #14386C;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px #14386C;
+    overflow: hidden;
+}
+
+#top-part {
+    font-weight: bold;
+    max-width: 100%;
+    background-color: white; /* Gold background color */
+    display: flex;
+    border-bottom: 5px solid #B88416;
+    align-items: center;
+    justify-content: center; /* Spread out the contents */
+    height: auto;
+    padding: 0 10%; /* Add padding on the sides */
+}
+
+/* #top-part::before {
+    overflow: hidden;
+    content: 'CPSC';
+    display: block;
+    text-align: right;
+    padding: 5%;
+    color: #ffffff;
+    font-size: 1.5em;
+    flex: 1;
+}
+
+#top-part::after {
+    overflow: hidden;
+    content: '3750';
+    display: block;
+    text-align: left;
+    padding: 5%;
+    color: #ffffff;
+    font-size: 1.5em;
+    flex: 1;
+} */
+
+#top-part img {
+    /* margin-top: 0px;
+    margin-bottom: 0px; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-height: 65%; /* Make the image height 100% of the parent container */
+    max-width: 65%; /* Make the image width 100% of the parent container */
+    /*height: auto;  Maintain aspect ratio 
+    width: auto;  Maintain aspect ratio */
+    z-index: 2; /* Make sure the image is above pseudo-elements */
+}
+
+#chat-box {
+    position: relative;
+    height: 400px; /* Adjust height for a larger chat box */
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-right: 3%;
+    border-top: none;
+    border-bottom: none; 
+    overflow-y: scroll;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    background-color: #ffffff; /* White background for the chat messages */
+    font-size: .9em; /* Adjust font-size as needed */
+}
+
+#chat-box::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+#input-area {
+    /* border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px; */
+    overflow: hidden;
+    display: flex;
+    align-items: stretch; /* Make children stretch to fill the height */
+    border: none;
+    max-width: 100%;
+}
+
+#send-btn {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 5px 10px; /* Adjust padding as desired */
+    width: 40px; /* Smaller width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#send-btn img {
+    padding: 10px;
+    visibility: hidden; /* Hide the actual img element, using the pseudo-element for display */
+}
+
+#send-btn:disabled {
+    background: #EFEFEF4D;
+}
+
+#send-btn.no-hover {
+    pointer-events: none; /* This will disable hover and click events while the class is applied */
+}
+
+#user-input {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    flex-grow: 1; /* Allow input to grow and fill available space */
+    margin: 0; /* Reset margin to ensure it doesn't push out the layout */
+    padding: 8px; /* Adjust padding as needed, but ensure it's accounted for in the height */
+    border: none; /* Remove border to prevent extra width */
+    outline: none; /* Optional: Removes the outline */
+    border-top: 3px solid #B88416;
+    max-height: 100%; /* Make the image height 100% of the parent container */
+    max-width: 100%; /* Make the image width 100% of the parent container */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; 
+}
+
+#user-input::placeholder{
+    color: #231f20;
+    border: none;
+}
+
+.message {
+    padding: 4px 8px; /* Reduced padding */
+    margin: 0.5rem 0;
+    display: inline-block; /* Makes the container fit the content width */
+    max-width: 80%; /* Maximum width of message bubbles */
+    word-wrap: break-word; /* Ensure long words wrap and don't overflow */
+}
+
+.user-message {
+    border-radius: 15px 15px 0 15px;
+    text-align: left;
+    float: right; /* Aligns the message bubble to the right */
+    clear: both; /* Ensures that the message doesn't wrap around floated elements */
+    color: #4b4a4d;
+    background-color: white;
+    border: 2px solid #B88416;
+    padding: 7px;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    border-radius: 15px 15px 15px 0;
+    background-color: #14386C;
+    text-align: left;
+    float: left; /* Aligns the message bubble to the left */
+    clear: both; /* Ensures that the message doesn't wrap around floated elements */
+    color: white;
+    border: 2px solid #B88416;
+    padding: 7px;
+    word-wrap: break-word;
+    margin-top: 5px; /* Add this line to reduce the top margin */
+}
+
+.bot-message a {
+    color: #B88416;
+}
+
+
+/* 3 Bar Animation */
+.lds-facebook,
+.lds-facebook div {
+    box-sizing: border-box;
+}
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 80px;
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: linear-gradient(#0026af, #3a68e6, #000000);
+    animation: lds-facebook .75s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0s;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+/* running dots */
+.running-dots {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: block;
+    margin: 1px auto;
+    position: relative;
+    left: -35%; /* Adjusted to align the dots properly */
+    box-sizing: border-box;
+    animation: shadowRolling 3s linear infinite;
+}
+
+@keyframes shadowRolling {
+    0% {
+        box-shadow: 0px 0 #14386C, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+    }
+    10% {
+        box-shadow: 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+    }
+    20% {
+        box-shadow: 110px 0 #B88416, 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0), 0px 0 rgba(188, 148, 91, 0);
+    }
+    30% {
+        box-shadow: 120px 0 #B88416, 110px 0 #14386C, 100px 0 #B88416, 0px 0 rgba(188, 148, 91, 0);
+    }
+    40% {
+        box-shadow: 130px 0 #14386C, 120px 0 #B88416, 110px 0 #14386C, 100px 0 #B88416;
+    }
+    50% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 130px 0 #14386C, 120px 0 #B88416, 110px 0 #14386C;
+    }
+    60% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #B88416, 120px 0 #14386C;
+    }
+    70% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 130px 0 #B88416;
+    }
+    80% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0);
+    }
+    90% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0);
+    }
+    100% {
+        box-shadow: 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0), 200px 0 rgba(188, 148, 91, 0);
+    }
+}
+
+.loading-placeholder {
+    width: 100%;
+    min-height: 65px; /* or the height of your bot messages */
+    /* padding-bottom: 10px;
+    margin-top: 5%; */
+    float: left;
+    clear: both; /* Ensures it starts on a new line */
+    display: flex;
+    align-items: center;
+    /* padding-left: 5%; 
+    justify-content: center; /* Or 'center' if you want the animation centered */
+    background-color: transparent; /* No background color */
+}  
+
+.flash-loading {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    text-shadow: 
+        0 0 0 rgb(0, 204, 255), 
+        0 0 0 rgb(0, 119, 255), 
+        0 0 0 rgb(0 0 255);
+    font-size: 30px;
+    animation: l32 1.5s infinite cubic-bezier(0.5,-2000,0.5,2000);
+}
+.flash-loading:before {
+    content:"Loading...";
+}
+
+@keyframes l32{
+25%,100% {
+    text-shadow: 
+        0.03px -0.01px 0.01px rgb(0 204 255), 
+        0.02px  0.02px 0     rgb(0 119 255), 
+        -0.02px  0.02px 0     rgb(0 0 255);
+    }
+}
+
+/* HTML: <div class="loader"></div> */
+/* .loader {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    white-space: pre;
+    font-size: 30px;
+}
+.loader:before {
+content: "Loading...";
+animation: l34 1s infinite alternate;
+}
+
+@keyframes l34{
+0%,15%,75%,100% {
+    content:"Loading...";
+}
+20% {content:"Loading..."}
+25% {content:"Lo ding..."}
+30% {content:"Load ng..."}
+35% {content:" oading..."}
+40% {content:"L ading..."}
+45% {content:"Loadin ..."}
+50% {content:"Loa ing..."}
+55% {content:"Loading  ."}
+60% {content:" oa ing..."}
+65% {content:"L ading..."}
+70% {content:"Load n ..."}
+} */

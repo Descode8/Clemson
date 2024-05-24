@@ -1,0 +1,79 @@
+/* Set a font for the entire body */
+body {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    padding-top: 10%;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+/* Style the login container */
+.login-container {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    font-weight: bold;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #3a68e6;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #3a68e6;
+    background: #fff;
+}
+
+/* Style the form elements */
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3a68e6;
+    border-radius: 3px;
+    box-sizing: border-box; /* Makes sure the padding doesn't affect the total width */
+}
+
+/* Style for the submit button */
+#login-form button {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #3a68e6;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login-form button:hover {
+    background-color: #9c9999;
+}
+
+/* Error message style */
+p {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+title {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    font-weight: bold;
+}

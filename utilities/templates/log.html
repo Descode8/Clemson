@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Chat Log</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/log.css') }}">
+    <!-- Link to favicon image -->
+    <link rel="icon" href="{{ url_for('static', filename='Customers/FloridaDepartmentOfFinancialServices/ask_jimmy_tab.png') }}" type="image/png">
+</head>
+<body>
+    <!-- Title of the page -->
+    <h1>Witty AI Chat Log</h1>
+    <!-- Filter input field -->
+    <div class="filter-container">
+        <input type="text" id="filter-input" placeholder="Filter by keyword" onkeydown="if(event.keyCode === 13) filterLogs()">
+    </div>
+    <!-- Table to display chat logs -->
+    <table>
+        <!-- Pagination Controls -->
+    <div class="pagination">
+    <a href="?page=1&per_page={{ per_page }}">First</a>
+    <a href="?page={{ page - 1 }}&per_page={{ per_page }}" class="{{ 'disabled' if page <= 1 else '' }}">Previous</a>
+    <a href="?page={{ page + 1 }}&per_page={{ per_page }}" class="{{ 'disabled' if page * per_page >= total else '' }}">Next</a>
+    <a href="?page={{ (total // per_page) + (1 if total % per_page > 0 else 0) }}&per_page={{ per_page }}">Last</a>
+</div>
+
+    <!-- Page Size Selector -->
+    <div>
+        <label for="size-select">Entries per page:</label>
+        <select id="size-select" onchange="changePageSize(this.value)">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+        <thead>
+            <tr>
+                <th>Interaction</th>
+                <th>IP Address</th>
+                <th>Topic</th>
+                <th>User Question</th>
+                <th>AI Response</th>
+                <th>User Question Timestamp</th>
+                <th>AI Response Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in chat_logs %}
+            <tr>
+                {% for key, value in row.items() %}
+                    {% if key != 'customer_id' and key != 'system_request' %}
+                        <td>{{ value }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Link to external JavaScript file -->
+    <script src="{{ url_for('static', filename='js/log.js') }}"></script>
+    <script>
+        function changePageSize(size) {
+            window.location.href = `?page=1&per_page=${size}`;
+        }
+    </script>
+</body>
+</html>

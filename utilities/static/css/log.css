@@ -1,0 +1,77 @@
+body {
+    background-color: #f1f1f1;
+}
+
+/* log.css */
+h1 {
+    padding-top: 2%;
+    font-family: 'Century Gothic Bold', 'Century Gothic', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Style for the entire table */
+
+table {
+    font-family: 'Century Gothic Regular', 'Century Gothic', Arial, sans-serif;
+    max-width: 95%;
+    margin: 20px auto; /* Adjusted for clearer visibility */
+    border-collapse: separate; /* Changed to separate for individual cell borders */
+    border-spacing: 0; /* No spacing between borders of cells */
+    border: 2px solid black; /* Single border for the whole table */
+    border-radius: 3px; /* Adjusted for more visible rounding */
+    overflow: hidden; /* Ensures that the content respects the table's rounded corners */
+    box-shadow: 0 2px 5px #3a68e6;
+    background-color: #f1f1f1;
+}
+
+
+/* Style for column headers */
+th {
+    font-family: 'Century Gothic Bold', 'Century Gothic', Arial, sans-serif;
+    background-color: #3a68e6;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: larger;
+    color: #0026af;
+    border-right: px solid black; 
+    border-bottom: 2px solid black;
+    padding: 10px;
+}
+
+/* Style for vertical lines */
+td {
+    border-bottom: 2px solid black;
+    border-right: 2px solid black; 
+    padding: 8px;
+}
+
+td:last-child, th:last-child {
+    border-right: none;
+}
+
+tr:last-child td, tr:last-child th {
+    border-bottom: none;
+}
+
+/* Style for horizontal lines */
+tr {
+    border-bottom: 2px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Style for filter */
+.filter-container {
+    font-family: Arial, sans-serif;
+    width: 10%;
+    padding: 5px;
+    margin: 10%; /* Add this line to center the container */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.filter-input {
+    font-weight: bold;
+}
+

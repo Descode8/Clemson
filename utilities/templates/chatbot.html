@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Witty AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Images/robot.png') }}" alt="WittyAI Photo" type="image/png">
+</head>
+<body>
+    
+    <div id="chat-container">
+        <div id="top-part">
+            <img src="{{ url_for('static', filename='Images/webdev.png') }}" alt="WittyAI"> 
+        </div>
+        <div id="chat-box">
+            <!-- The loading animation will be dynamically inserted here by JavaScript when needed -->
+        </div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Ask me about Web Dev...">
+            <div>
+                <input type="image" id="send-btn" src="{{ url_for('static', filename='Images/orange_button.png') }}" alt="Send"/>
+            </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hover effect for send button
+            var sendButton = document.getElementById('send-btn');
+            sendButton.addEventListener('mouseover', function() {
+                this.src = '{{ url_for('static', filename ='Images/purple_button.png') }}';
+            });
+            sendButton.addEventListener('mouseout', function() {
+                this.src = '{{ url_for('static', filename ='Images/orange_button.png') }}';
+            });
+        });
+        </script>
+</body>
+</html>
+
+
